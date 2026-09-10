@@ -34,7 +34,10 @@
 #include <linux/random.h>
 #include <linux/string.h>
 
-
+// Setting module metadata
+MODULE_LICENSE("GPL");
+MODULE_DESCRIPTION("Raptor Maze Module: Displays a randomly generated maze.");
+MODULE_AUTHOR("Kaitlyn Holbert");
 
 // Custom proc name
 #define PROC_NAME "amazeraptor"
@@ -75,7 +78,7 @@ static const struct proc_ops proc_ops = {
 int build_maze_edges(void);
 void shuffle_maze_edges(int edge_number);
 void generate_maze(void);
-void format_maze(void);
+void format_maze(void)
 
 
 /**
@@ -289,8 +292,3 @@ void format_maze(void)
 // Registering the init and exit functions
 module_init( maze_init );
 module_exit( maze_exit );
-
-// Setting module metadata
-MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Raptor Maze Module: Displays a randomly generated maze.");
-MODULE_AUTHOR("Kaitlyn Holbert");
